@@ -10,6 +10,5 @@ class PlainTextReport < Report
 
   def output_line(line)
     puts(line)
-    raise 'Called abstract method: output_head'
   end
 end
