@@ -20,15 +20,14 @@ class Report
   end
 
   def output_start
-    raise 'Called abstract method: output_start'
   end
 
   def output_head
-    raise 'Called abstract method: output_head'
+    # Example of default method with something to do
+    output_line(@title)
   end
 
   def output_body_start
-    raise 'Called abstract method: output_body_start'
   end
 
   def output_line(line)
@@ -36,10 +35,8 @@ class Report
   end
 
   def output_body_end
-    raise 'Called abstract method: output_body_end'
   end
 
   def output_end
-    raise 'Called abstract method: output_end'
   end
 end
