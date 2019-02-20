@@ -2,14 +2,13 @@ require 'active_support'
 
 autoload :Subject, './observer/subject'
 autoload :Employee, './observer/employee'
-autoload :Payroll, './observer/payroll'
-autoload :TaxMan, './observer/tax_man'
+autoload :Observer, './observer/observer'
+
+include Observer 
 
 fred = Employee.new('Fred', 'Crane Operator', 30000)
 
-payroll = Payroll.new
-fred.add_observer(payroll)
-taxman = TaxMan.new
-fred.add_observer(taxman)
+fred.add_observer &Observer::PAYROLL
+fred.add_observer &Observer::TAXMAN
 
 fred.salary = 3500

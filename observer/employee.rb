@@ -1,7 +1,7 @@
 class Employee
   include Subject 
-  attr_reader :name
-  attr_accessor :title, :salary
+
+  attr_accessor :name, :title, :salary
 
   def initialize( name, title, salary )
     super()
