@@ -1,5 +1,5 @@
-class HTMLFormatter
-  def output_report(context)
+module Formatter
+  HTML = lambda do |context|
     puts('<html>')
     puts(' <head>')
     puts(" <title>#{context.title}</title>")
@@ -10,5 +10,12 @@ class HTMLFormatter
     end
     puts(' </body>')
     puts('</html>')
+  end
+
+  PLAIN_TEXT = lambda do |context|
+    puts("***** #{context.title} *****")
+    context.text.each do |line|
+      puts(line)
+    end
   end
 end
