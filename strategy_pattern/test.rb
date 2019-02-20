@@ -12,5 +12,5 @@ report.formatter = PlainTextFormatter.new
 report.output_report
 
 # If you try to send formatter it will raise the abstract method error
-report.formatter = Formatter.new
-report.output_report
+# report.formatter = Formatter.new
+# report.output_report
