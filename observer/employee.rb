@@ -11,7 +11,9 @@ class Employee
   end
 
   def salary=(new_salary)
-    @salary = new_salary
-    notify_observers
+    if salary != new_salary
+      @salary = new_salary
+      notify_observers
+    end
   end
 end
