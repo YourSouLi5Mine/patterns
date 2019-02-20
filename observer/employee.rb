@@ -1,12 +1,10 @@
-require 'observer'
-
 class Employee
-  include Observable 
-
+  include Subject 
   attr_reader :name
   attr_accessor :title, :salary
 
   def initialize( name, title, salary )
+    super()
     @name = name
     @title = title
     @salary = salary
@@ -14,7 +12,6 @@ class Employee
 
   def salary=(new_salary)
     @salary = new_salary
-    changed
-    notify_observers(self)
+    notify_observers
   end
 end
