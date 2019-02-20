@@ -1,11 +1,11 @@
 class HTMLFormatter
-  def output_report(title, text)
+  def output_report(context)
     puts('<html>')
     puts(' <head>')
-    puts(" <title>#{title}</title>")
+    puts(" <title>#{context.title}</title>")
     puts(' </head>')
     puts(' <body>')
-    text.each do |line|
+    context.text.each do |line|
       puts(" <p>#{line}</p>" )
     end
     puts(' </body>')

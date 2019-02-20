@@ -9,6 +9,6 @@ class Report
   end
 
   def output_report
-    @formatter.output_report( @title, @text )
+    @formatter.output_report(self)
   end
 end
