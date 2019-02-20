@@ -2,16 +2,29 @@ class Employee
   attr_reader :name
   attr_accessor :title, :salary
 
-  def initialize( name, title, salary, payroll )
+  def initialize( name, title, salary )
     @name = name
     @title = title
     @salary = salary
-    @payroll = payroll
+    @observer = [] 
   end
 
-  # Note we need a salary= method thanks to line 15
   def salary=(new_salary)
     @salary = new_salary
-    @payroll.update(self)
+    notify_observers
+  end
+
+  def notify_observers 
+    @observer.each do |observer|
+      observer.update(self)
+    end
+  end
+
+  def add_observer(observer)
+    @observer << observer
+  end
+
+  def delete_observer(observer)
+    @observer.delete(observer)
   end
 end
