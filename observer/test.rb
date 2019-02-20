@@ -1,5 +1,6 @@
 require 'active_support'
 
+autoload :Subject, './observer/subject'
 autoload :Employee, './observer/employee'
 autoload :Payroll, './observer/payroll'
 autoload :TaxMan, './observer/tax_man'
